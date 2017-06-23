@@ -1,0 +1,7 @@
+# Artifacts
+dist/
+node_modules/
+
+# Intellij
+*.iml
+.idea/

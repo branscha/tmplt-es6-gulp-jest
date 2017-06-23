@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "es2015"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "underscore": "lodash"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {},
+    "production": {
+      "plugins": [
+        "transform-es2015-modules-amd"
+      ]
+    }
+  }
+}
