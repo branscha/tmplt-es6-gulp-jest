@@ -1,10 +1,16 @@
-# ES6 AMD module (using Gulp and Jest)
+# ES6 AMD module (using Gulp/Browserify/Babelify and Jest)
 ## Goal
 
 Build an ES6 module that can be consumed by ES5 applications.
 
  * It should be a AMD or UMD module.
  * It should be fully testable with unit tests.
+
+Specifics
+
+ * Browserify is used to collect the multiple source scripts into single output script. It is very useful if the sources are split into multiple modules.
+ * It is browserify who invokes bable, browserify is the driver (because it is a source tree walker).
+ * Minification.
 
 Remarks
 
