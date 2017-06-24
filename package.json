@@ -4,7 +4,8 @@
   "description": "Build an ES6 module that can be consumed by ES5 applications. It should be a AMD or UMD module.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "gulp jest"
+    "test": "gulp jest",
+    "prepublishOnly": "gulp dist"
   },
   "author": "Bruno Ranschaert",
   "license": "ISC",
