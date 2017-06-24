@@ -10,7 +10,7 @@ Specifics
 
  * Browserify is used to collect the multiple source scripts into single output script. It is very useful if the sources are split into multiple modules.
  * It is browserify who invokes bable, browserify is the driver (because it is a source tree walker).
- * Minification.
+ * Minification. ALWAYS TEST THE RESULT OF MINIFICATION. The minification can corrupt your code, make sure to test the minified code and tweak the minification settings.
 
 Remarks
 
@@ -18,14 +18,28 @@ Remarks
  * gulp dist: builds the dist output.
  * gulp jest: runs jest from within gulp.
 
-The package can be used like this. Note that the require explicitly needs to use the .default to get the default export of the es6 package.
+The package can be used like this. 
 
-        var pkg = require('package-name').default;
+        var pkg = require('package-name');
         pkg.do-something();
 
 ## References
+### ES6 project structuring
 
- * https://stackoverflow.com/questions/29738381/how-to-publish-a-module-written-in-es6-to-npm
+https://stackoverflow.com/questions/29738381/how-to-publish-a-module-written-in-es6-to-npm
+
+### Minification options
+
+https://www.npmjs.com/package/babel-preset-babili
+
+Always verify the minified code, minification reduces information and could corrupt the semantics.
+Tweak the minification options as necessary.
+
+### Elegant module exports
+
+https://stackoverflow.com/questions/33505992/babel-6-changes-how-it-exports-default
+
+Explining why you need the babel-plugin-add-module-exports module to have elegant exports that can be used elegantly in ES5 code without the '.default' suffix.
 
 ## Notes
 ### Things to install
